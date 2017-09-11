@@ -6,31 +6,6 @@
 #include <stdio.h>
 #include <math.h>
 
-/*
-int     main()
-{
-    t_complex   tmp;
-    t_complex   c;
-    
-    tmp.re = 0.1;
-    tmp.im = 0.2;
-
-    c.re = -0.75;
-    c.im = -0.2;
-
-    int i = 0;
-    while (i++ < 500)
-    {
-        printf("z(%d) = %f + i * %f\n", i, tmp.re, tmp.im);
-        tmp = julia_iterate(tmp, c);
-        
-    }
-
-    return (0);
-}
-*/
-
-
 
 void    plot_point(char **data_addr, int sl, int x, int y, int color)
 {

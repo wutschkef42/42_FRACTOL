@@ -6,3 +6,4 @@ t_complex	julia_iterate(t_complex zk, t_complex c)
 {
 	return (cadd(cmul(zk, zk), c));
 }
+
