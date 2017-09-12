@@ -15,7 +15,12 @@
 
 
 t_complex   *iterate(t_complex in, t_complex const);
-t_complex	julia_iterate(t_complex zk, t_complex c);
+t_complex	quadratic_iterator(t_complex zk, t_complex c);
+void    	plot_point(char **data_addr, int sl, int x, int y, int color);
+void		mandelbrot(char **data_addr);
+void		julia(char **data_addr);
+
+
 
 
 #endif
