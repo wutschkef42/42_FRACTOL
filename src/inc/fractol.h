@@ -27,6 +27,7 @@ t_complex	cos_iterator(t_complex zk, t_complex c);
 void    	plot_point(char **data_addr, int sl, int x, int y, int color);
 void		mandelbrot(char **data_addr);
 void		quadratic_julia(char **data_addr);
+void		burningship(char **data_addr);
 void		sin_julia(char **data_addr);
 int			generate_fractal(char *id, char **data_addr);
 int			colorize(int k);

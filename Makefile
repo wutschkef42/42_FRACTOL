@@ -17,6 +17,7 @@ FILES =	main.c \
 		quadratic_julia.c \
 		sin_julia.c \
 		mandelbrot.c \
+		burningship.c \
 		plot_point.c \
 		print_man.c \
 		quadratic_iterator.c \

@@ -12,6 +12,10 @@ int	generate_fractal(char *id, char **data_addr)
 	{
 		mandelbrot(data_addr);
 	}
+	else if (ft_strcmp(id, "burningship") == 0)
+	{
+		burningship(data_addr);
+	}
 	else if (ft_strcmp(id, "sinjulia") == 0)
 	{
 		sin_julia(data_addr);
