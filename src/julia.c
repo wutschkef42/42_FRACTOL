@@ -39,7 +39,11 @@ void	julia(char **data_addr)
             }
             if (k >= NITMAX)
             {
-                plot_point(data_addr, HEIGHT, i, j, 0x00ffffff);
+                plot_point(data_addr, HEIGHT, i, j, 0x00000000);
+            }
+            else
+            {
+                plot_point(data_addr, HEIGHT, i-1, j-1, colorize(k));
             }
         }
     }

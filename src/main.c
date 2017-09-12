@@ -12,30 +12,30 @@ int     main(int argc, char **argv)
     void    *win;
     void    *img;
     char    *data_addr;
+    t_env   env;
 
-    int i;
-    int j;
-    int k;
-
-    int bpp = 32;
-    int sl = WIDTH; 
-    int ed = 1;
-
+    env.bpp = 32;
+    env.sl = WIDTH; 
+    env.ed = 1;
 
     if (argc != 2)
     {
-        ft_putstr("Usage: ./fractol [set_identifier]\n");
-        return (0);
+        ft_putstr("Usage: ./fractol [fractal_name]\n");
+        return (1);
+    }
+    
+    if (!(fractal_exists(argv[1])))
+    {
+        print_man();
+        return (2);
     }
 
     mlx = mlx_init();
     win = mlx_new_window(mlx, WIDTH, HEIGHT, "FRACTOL");
     img = mlx_new_image(mlx, WIDTH, HEIGHT);
-    data_addr = mlx_get_data_addr(img, &bpp, &sl, &ed);
-    julia(&data_addr);
-    // fill image with fractal and put to screen
+    data_addr = mlx_get_data_addr(img, &env.bpp, &env.sl, &env.ed);
+    generate_fractal(argv[1], &data_addr);
     mlx_put_image_to_window(mlx, win, img, 0, 0);
-    mlx_loop(mlx);
-
+    mlx_loop(mlx); 
     return (0);
 }
