@@ -31,8 +31,8 @@ void	burningship(char **data_addr)
     double xwidth = x_max - x_min;
     double yheight = y_max - y_min;
 
-    c.re = -0.7;
-    c.im = -0.3;
+    c.re = -0.3;
+    c.im = 0.2;
 	
     i = 0;
     while (i++ < WIDTH)
@@ -40,17 +40,18 @@ void	burningship(char **data_addr)
         j = 0;
         while (j++ < HEIGHT)
         {
-        
             z.re = fabs(((float) i) / WIDTH * xwidth + x_min);
             z.im = fabs(((float) j) / HEIGHT * yheight + y_min); 
             k = 0;
             while ( cabsv(z) < zabsmax && k++ < NITMAX)
             {
+                z.re = fabs(z.re);
+                z.im = fabs(z.im);
                 z = quadratic_iterator(z, c);
             }
             if (k >= NITMAX)
             {
-                plot_point(data_addr, HEIGHT, i, j, 0x00000000);
+                plot_point(data_addr, HEIGHT, i-1, j-1, 0x00000000);
             }
             else
             {

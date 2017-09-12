@@ -16,12 +16,14 @@ FILES =	main.c \
 		generate_fractal.c \
 		quadratic_julia.c \
 		sin_julia.c \
+		cos_julia.c \
 		mandelbrot.c \
 		burningship.c \
 		plot_point.c \
 		print_man.c \
 		quadratic_iterator.c \
-		sin_iterator.c
+		sin_iterator.c \
+		cos_iterator.c
 
 SRC =	$(addprefix $(SRC_DIR)/, $(FILES)))
 OBJ = 	$(addprefix $(OBJ_DIR)/, $(FILES:.c=.o))

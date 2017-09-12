@@ -12,8 +12,8 @@ t_complex   ccosinus(t_complex c)
 	re = c.re;
 	im = c.im;
 
-    res.re = exp(re) * cos(im);
-    res.im = exp(re) * sin(im);
+    res.re = cos(re) * cosh(im);
+    res.im = (-1) * sin(re) * sinh(im);
 
     return (res);
 }

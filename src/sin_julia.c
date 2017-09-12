@@ -43,7 +43,7 @@ void	sin_julia(char **data_addr)
             }
             if (k >= NITMAX)
             {
-                plot_point(data_addr, HEIGHT, i, j, 0x00000000);
+                plot_point(data_addr, HEIGHT, i-1, j-1, 0x00000000);
             }
             else
             {

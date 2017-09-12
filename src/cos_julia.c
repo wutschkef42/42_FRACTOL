@@ -5,7 +5,7 @@
 
 
 /* 
-** constants for the sin julia set
+** constants for the cos julia set
 ** c = 1.0 - 0.5j        # probably has good colors
 ** c = pi/2*(1.0 + 0.6j) # sort of cool - dendrites
 ** c = pi/2*(1.0 + 0.4j) # same deal 
@@ -28,8 +28,8 @@ void	cos_julia(char **data_addr)
     double xwidth = x_max - x_min;
     double yheight = y_max - y_min;
 
-    c.re = 1.0;
-    c.im = 0.1;
+    c.re = 3.1415/2;
+    c.im = 3.1415/2*0.4;
 	
     i = 0;
     while (i++ < WIDTH)
@@ -43,11 +43,11 @@ void	cos_julia(char **data_addr)
             k = 0;
             while ( fabs(z.im) < zabsmax && k++ < NITMAX)
             {
-                z = sin_iterator(z, c);
+                z = cos_iterator(z, c);
             }
             if (k >= NITMAX)
             {
-                plot_point(data_addr, HEIGHT, i, j, 0x00000000);
+                plot_point(data_addr, HEIGHT, i-1, j-1, 0x00000000);
             }
             else
             {

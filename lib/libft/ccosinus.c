@@ -2,7 +2,7 @@
 #include "libft.h"
 #include <math.h>
 
-t_complex   csinus(t_complex c)
+t_complex   ccosinus(t_complex c)
 {
 	t_complex res;
 	double re;
@@ -11,8 +11,8 @@ t_complex   csinus(t_complex c)
 	re = c.re;
 	im = c.im;
 
-    res.re = sin(re) * cosh(im);
-    res.im = cos(re) * sinh(im);
+    res.re = cos(re) * cosh(im);
+    res.im = (-1) * sin(re) * sinh(im);
 
     return (res);
 }
