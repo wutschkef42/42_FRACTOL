@@ -14,11 +14,13 @@ FILES =	main.c \
 		colorize.c \
 		fractal_exists.c \
 		generate_fractal.c \
-		julia.c \
+		quadratic_julia.c \
+		sin_julia.c \
 		mandelbrot.c \
 		plot_point.c \
 		print_man.c \
-		quadratic_iterator.c
+		quadratic_iterator.c \
+		sin_iterator.c
 
 SRC =	$(addprefix $(SRC_DIR)/, $(FILES)))
 OBJ = 	$(addprefix $(OBJ_DIR)/, $(FILES:.c=.o))

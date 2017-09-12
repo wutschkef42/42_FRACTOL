@@ -1,8 +1,18 @@
 
 #include "../lib/libft/libft.h"
 #include "./inc/fractol.h"
+#include <math.h>
 
-void	julia(char **data_addr)
+
+/* 
+** constants for the sin julia set
+** c = 1.0 - 0.5j        # probably has good colors
+** c = pi/2*(1.0 + 0.6j) # sort of cool - dendrites
+** c = pi/2*(1.0 + 0.4j) # same deal 
+** c = pi/2*(2.0 + 0.25j)  # fuzzy spots
+** c = pi/2*(1.5 + 0.05j)  # batlef
+*/
+void	cos_julia(char **data_addr)
 {
 	int	i;
 	int j;
@@ -10,7 +20,7 @@ void	julia(char **data_addr)
 	t_complex z;
 	t_complex c;
 
-	double zabsmax = 10.0;
+	double zabsmax = 50.0;
     double x_min = -1.5;
     double x_max = 1.5;
     double y_min = -1.5;
@@ -18,8 +28,8 @@ void	julia(char **data_addr)
     double xwidth = x_max - x_min;
     double yheight = y_max - y_min;
 
-    c.re = -0.7;
-    c.im = -0.3;
+    c.re = 1.0;
+    c.im = 0.1;
 	
     i = 0;
     while (i++ < WIDTH)
@@ -31,9 +41,9 @@ void	julia(char **data_addr)
             z.re = ((float) i) / WIDTH * xwidth + x_min;
             z.im = ((float) j) / HEIGHT * yheight + y_min; 
             k = 0;
-            while ( cabsv(z) < zabsmax && k++ < NITMAX)
+            while ( fabs(z.im) < zabsmax && k++ < NITMAX)
             {
-                z = quadratic_iterator(z, c);
+                z = sin_iterator(z, c);
             }
             if (k >= NITMAX)
             {

@@ -19,7 +19,7 @@ int     main(int argc, char **argv)
 
     if (argc != 2)
     {
-        ft_putstr("Usage: ./fractol [fractal_name]\n");
+        print_man();
         return (1);
     }
     

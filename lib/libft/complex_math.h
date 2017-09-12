@@ -18,5 +18,9 @@ t_complex   cmul(t_complex c1, t_complex c2);
 t_complex   cdiv(t_complex c1, t_complex c2);
 t_complex   ccon(t_complex c);
 double		cabsv(t_complex c);
+t_complex	csinus(t_complex c);
+t_complex	ccosinus(t_complex c);
+t_complex	cexpo(t_complex c);
+
 
 #endif
