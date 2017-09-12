@@ -1,8 +1,6 @@
 
-
+#include "../lib/libft/libft.h"
 #include "./inc/fractol.h"
-#include "../lib/complex_math/inc/complex_math.h"
-
 
 void	julia(char **data_addr)
 {

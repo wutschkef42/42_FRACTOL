@@ -2,7 +2,6 @@
 #include "../lib/libft/libft.h"
 #include "../lib/mlx/mlx.h"
 #include "./inc/fractol.h"
-#include "../lib/complex_math/inc/complex_math.h"
 #include <stdio.h>
 #include <math.h>
 

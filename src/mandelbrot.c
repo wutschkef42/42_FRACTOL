@@ -1,7 +1,7 @@
 
 
 #include "./inc/fractol.h"
-#include "../lib/complex_math/inc/complex_math.h"
+#include "../lib/libft/libft.h"
 
 
 void	mandelbrot(char **data_addr)
