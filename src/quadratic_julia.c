@@ -14,21 +14,13 @@
 ** c = -0.75 + 0.15j   # groovy
 ** c = -0.7 + 0.35j    # frost
 */
-void	quadratic_julia(char **data_addr, t_complex c)
+void	quadratic_julia(char **data_addr, t_env *env)
 {
-	int	i;
-	int j;
-	int k;
-	t_complex z;
+	int	       i;
+	int        j;
+	int        k;
+	t_complex  z;
 
-	double zabsmax = 10.0;
-    double x_min = -1.5;
-    double x_max = 1.5;
-    double y_min = -1.5;
-    double y_max = 1.5;
-    double xwidth = x_max - x_min;
-    double yheight = y_max - y_min;
-	
     i = 0;
     while (i++ < WIDTH)
     {
@@ -36,12 +28,12 @@ void	quadratic_julia(char **data_addr, t_complex c)
         while (j++ < HEIGHT)
         {
         
-            z.re = ((float) i) / WIDTH * xwidth + x_min;
-            z.im = ((float) j) / HEIGHT * yheight + y_min; 
+            z.re = ((float) i) / WIDTH * (env->x_max - env->x_min) + env->x_min;
+            z.im = ((float) j) / HEIGHT * (env->y_max - env->y_min) + env->y_min; 
             k = 0;
-            while ( cabsv(z) < zabsmax && k++ < NITMAX)
+            while ( cabsv(z) < env->zabsmax && k++ < NITMAX)
             {
-                z = quadratic_iterator(z, c);
+                z = quadratic_iterator(z, env->c);
             }
             if (k >= NITMAX)
             {

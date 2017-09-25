@@ -2,11 +2,11 @@
 #include "./inc/fractol.h"
 #include "../lib/libft/libft.h"
 
-int	generate_fractal(char *id, char **data_addr, t_complex c)
+int	generate_fractal(char *id, char **data_addr, t_env *env)
 {
 	if (ft_strcmp(id, "julia") == 0)
 	{
-		quadratic_julia(data_addr, c);
+		quadratic_julia(data_addr, env);
 	}	
 	else if (ft_strcmp(id, "mandelbrot") == 0)
 	{
