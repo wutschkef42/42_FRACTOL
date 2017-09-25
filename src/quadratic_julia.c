@@ -14,7 +14,7 @@
 ** c = -0.75 + 0.15j   # groovy
 ** c = -0.7 + 0.35j    # frost
 */
-void	quadratic_julia(char **data_addr, t_env *env)
+void	quadratic_julia(t_env *env)
 {
 	int	       i;
 	int        j;
@@ -31,17 +31,17 @@ void	quadratic_julia(char **data_addr, t_env *env)
             z.re = ((float) i) / WIDTH * (env->x_max - env->x_min) + env->x_min;
             z.im = ((float) j) / HEIGHT * (env->y_max - env->y_min) + env->y_min; 
             k = 0;
-            while ( cabsv(z) < env->zabsmax && k++ < NITMAX)
+            while ( cabsv(z) < env->zabsmax && k++ < env->nitmax)
             {
                 z = quadratic_iterator(z, env->c);
             }
-            if (k >= NITMAX)
+            if (k >= env->nitmax)
             {
-                plot_point(data_addr, HEIGHT, i, j, 0x00000000);
+                plot_point(&env->data_addr, HEIGHT, i, j, 0x00000000);
             }
             else
             {
-                plot_point(data_addr, HEIGHT, i-1, j-1, colorize(k));
+                plot_point(&env->data_addr, HEIGHT, i-1, j-1, colorize(k));
             }
         }
     }

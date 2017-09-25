@@ -4,21 +4,13 @@
 #include "../lib/libft/libft.h"
 
 
-void	mandelbrot(char **data_addr)
+void	mandelbrot(t_env *env)
 {
 	int	i;
 	int j;
 	int k;
 	t_complex z;
-	t_complex c;
-
-	double zabsmax = 10.0;
-    double x_min = -1.5;
-    double x_max = 1.5;
-    double y_min = -1.5;
-    double y_max = 1.5;
-    double xwidth = x_max - x_min;
-    double yheight = y_max - y_min;
+    t_complex c;
 
 	i = 0;
     while (i++ < WIDTH)
@@ -26,22 +18,23 @@ void	mandelbrot(char **data_addr)
         j = 0;
         while (j++ < HEIGHT)
         {
+
             z.re = 0;
             z.im = 0;
-            c.re = ((float) i) / WIDTH * xwidth + x_min;
-            c.im = ((float) j) / HEIGHT * yheight + y_min; 
+            c.re = ((float) i) / WIDTH * (env->x_max - env->x_min) + env->x_min;
+            c.im = ((float) j) / HEIGHT * (env->y_max - env->y_min) + env->y_min; 
             k = 0;
-            while ( cabsv(z) < zabsmax && k++ < NITMAX)
+            while ( cabsv(z) < env->zabsmax && k++ < env->nitmax)
             {
                 z = quadratic_iterator(z, c);
             }
-            if (k >= NITMAX)
+            if (k >= env->nitmax)
             {
-                plot_point(data_addr, HEIGHT, i, j, 0x00000000);
+                plot_point(&env->data_addr, HEIGHT, i, j, 0x00000000);
             }
             else
             {
-                plot_point(data_addr, HEIGHT, i-1, j-1, colorize(k));
+                plot_point(&env->data_addr, HEIGHT, i-1, j-1, colorize(k));
             }
         }
     }

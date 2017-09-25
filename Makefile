@@ -23,7 +23,9 @@ FILES =	main.c \
 		print_man.c \
 		quadratic_iterator.c \
 		sin_iterator.c \
-		cos_iterator.c
+		cos_iterator.c \
+		event_hooks.c \
+		init_env.c 
 
 SRC =	$(addprefix $(SRC_DIR)/, $(FILES)))
 OBJ = 	$(addprefix $(OBJ_DIR)/, $(FILES:.c=.o))
