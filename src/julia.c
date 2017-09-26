@@ -33,7 +33,8 @@ void	julia(t_complex (*iter)(t_complex zk, t_complex c), t_env *env)
             k = 0;
             while ( cabsv(z) < env->zabsmax && k++ < env->nitmax)
             {
-                z = iter(z, env->c);
+                z = iter(z, env->c); // basic juliaset: iterator is f(z) = z * z + c
+                                     
             }
             if (k >= env->nitmax)
             {
