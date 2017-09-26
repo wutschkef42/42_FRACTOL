@@ -63,6 +63,11 @@ int     	key_hook(int keycode, void *param);
 int     	mouse_hook(int button, int x, int y, void *param);
 int  	  	zoom_quadrant(int keycode, void *param);
 
+void		julia(t_complex (*iter)(t_complex zk, t_complex c), t_env *env);
+
+int 		set_constant(t_env *env, char *id);
+
+
 
 t_env		*init_env();
 

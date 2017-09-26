@@ -93,6 +93,7 @@ int     zoom_quadrant(int keycode, void *param)
     // first quadrant, decrease y_max, decrease x_max
     if (keycode == 18)
     {
+        printf("hello\n");
         env->x_max -= xwidth / 2;
         env->y_max -= yheight / 2;
     } 
@@ -115,7 +116,7 @@ int     zoom_quadrant(int keycode, void *param)
         env->y_min = env->y_max - yheight / 2; 
     }
     env->nitmax += 20;
-    printf("mitmax: %d\n", env->nitmax);
+    printf("a: %f, b: %f, c: %f, d: %f\n", env->x_min, env->x_max, env->y_min, env->y_max);
     generate_fractal(env->fractal_name, env);
     mlx_put_image_to_window(env->mlx, env->win, env->img, 0, 0);
     return (0);   

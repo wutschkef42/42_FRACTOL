@@ -6,7 +6,7 @@ int	generate_fractal(char *id, t_env *env)
 {
 	if (ft_strcmp(id, "julia") == 0)
 	{
-		quadratic_julia(env);
+		julia(&quadratic_iterator, env);
 	}	
 	else if (ft_strcmp(id, "mandelbrot") == 0)
 	{
@@ -18,11 +18,11 @@ int	generate_fractal(char *id, t_env *env)
 	}
 	else if (ft_strcmp(id, "sinjulia") == 0)
 	{
-		sin_julia(&env->data_addr);
+		julia(&sin_iterator, env);
 	}
 	else if (ft_strcmp(id, "cosjulia") == 0)
 	{
-		cos_julia(&env->data_addr);
+		julia(&cos_iterator, env);
 	}
 	return (1);
 }

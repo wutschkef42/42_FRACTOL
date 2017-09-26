@@ -10,13 +10,6 @@ t_env   *init_env()
     if (!(env = malloc(sizeof(t_env))))
         return (NULL);
 
-
-    t_complex c;
-
-    c.re = -0.7;
-    c.im = -0.2;
-
-    env->c = c;
     env->bpp = BPP;
     env->sl = WIDTH; 
     env->ed = ED;

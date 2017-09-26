@@ -10,15 +10,17 @@ int     main(int argc, char **argv)
 {
     t_env   *env;
 
-    env = init_env();
-    env->fractal_name = argv[1];
-    
     if (argc != 2 || !(fractal_exists(argv[1])))
     {
         print_man();
         return (1);
     }
-    
+
+
+    env = init_env();
+    env->fractal_name = argv[1];
+    set_constant(env, argv[1]);
+
     env->mlx = mlx_init();
     env->win = mlx_new_window(env->mlx, WIDTH, HEIGHT, "FRACTOL");
     env->img = mlx_new_image(env->mlx, WIDTH, HEIGHT);
