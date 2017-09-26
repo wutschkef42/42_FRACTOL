@@ -50,25 +50,16 @@ t_complex	sin_iterator(t_complex zk, t_complex c);
 t_complex	cos_iterator(t_complex zk, t_complex c);
 void    	plot_point(char **data_addr, int sl, int x, int y, int color);
 void		mandelbrot(t_env *env);
-void		quadratic_julia(t_env *env);
 void		burningship(char **data_addr);
-void		sin_julia(char **data_addr);
-void		cos_julia(char **data_addr);
 int			generate_fractal(char *id, t_env *env);
 int			colorize(int k);
 int			fractal_exists(char *id);
 void		print_man(void);
-
 int     	key_hook(int keycode, void *param);
 int     	mouse_hook(int button, int x, int y, void *param);
 int  	  	zoom_quadrant(int keycode, void *param);
-
 void		julia(t_complex (*iter)(t_complex zk, t_complex c), t_env *env);
-
 int 		set_constant(t_env *env, char *id);
-
-
-
 t_env		*init_env();
 
 

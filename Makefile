@@ -14,9 +14,6 @@ FILES =	main.c \
 		colorize.c \
 		fractal_exists.c \
 		generate_fractal.c \
-		quadratic_julia.c \
-		sin_julia.c \
-		cos_julia.c \
 		mandelbrot.c \
 		burningship.c \
 		plot_point.c \
