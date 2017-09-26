@@ -64,7 +64,7 @@ int     mouse_hook(int button, int x, int y, void *param)
     (env->c).im = ((float) y) / HEIGHT * yheight + env->y_min; 
     printf("x: %d, y: %d, button: %d\n", x, y, button);
     generate_fractal(env->fractal_name, env);
-    mlx_put_image_to_window(env->mlx, env->win, env->img, 0, 0);
+    mlx_put_image_to_window(env->mlx, env->win, env->img, PADDING_REST / 2, PADDING_MENU - (PADDING_REST / 2));
     return (0);
 
 }
@@ -118,6 +118,6 @@ int     zoom_quadrant(int keycode, void *param)
     env->nitmax += 20;
     printf("a: %f, b: %f, c: %f, d: %f\n", env->x_min, env->x_max, env->y_min, env->y_max);
     generate_fractal(env->fractal_name, env);
-    mlx_put_image_to_window(env->mlx, env->win, env->img, 0, 0);
+    mlx_put_image_to_window(env->mlx, env->win, env->img, PADDING_REST / 2, PADDING_MENU - (PADDING_REST / 2));
     return (0);   
 }

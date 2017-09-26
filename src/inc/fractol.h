@@ -3,17 +3,22 @@
 #ifndef _FRACTOL_H
 # define _FRACTOL_H
 
-# define SCALE		1.0
-# define WIDTH		500
-# define HEIGHT 	500
-# define NITMAX		200
-# define ED 		1
-# define BPP 		50
-# define ZABSMAX 	10.0
-# define X_MIN 		-2.0
-# define X_MAX 		2.0
-# define Y_MIN 		-2.0
-# define Y_MAX 		2.0
+# define SCALE			1.0
+# define WIDTH			500
+# define HEIGHT 		500
+# define NITMAX			200
+# define ED 			1
+# define BPP 			50
+# define ZABSMAX 		10.0
+# define X_MIN 			-2.0
+# define X_MAX 			2.0
+# define Y_MIN 			-2.0
+# define Y_MAX 			2.0
+
+# define PADDING_MENU	300
+# define PADDING_REST	40
+
+
 
 #define START_COLOR 0x00ffffff
 
